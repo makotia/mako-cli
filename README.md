@@ -1,3 +1,3 @@
 # mako-cli
 
-@makotia のブログを生成するための CLI
+[@makotia](https://github.com/makotia) のブログを生成するための CLI
