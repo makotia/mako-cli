@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --main-bg-color: #eff0f3;
+      --main-title-color: #0d0d0d;
+      --main-text-color: #1f1f1f;
+      --sub-text-color: #474747;
+      --sub-bg-color: #cdced1;
+      --code-bg-color: #d6d6d6;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --main-bg-color: #16161a;
+        --main-title-color: #fffffe;
+        --main-text-color: #f0f0f0;
+        --sub-text-color: #c0c0c0;
+        --sub-bg-color: #25252c;
+        --code-bg-color: #2f3238;
+      }
+    }
+    html {
+      background-color: var(--main-bg-color);
+      color: var(--main-text-color);
+      font-family: serif;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    a {
+      color: var(--main-text-color);
+    }
+    h1,
+    h2,
+    h3 {
+      margin: 1rem 0;
+      color: var(--main-title-color);
+    }
+    h2::before {
+      content: "## ";
+      opacity: 0.5;
+    }
+    h3::before {
+      content: "### ";
+      opacity: 0.5;
+    }
+    body {
+      padding: 0 .5rem;
+      font-family: serif;
+    }
+    section {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    img {
+      max-width: 100%;
+    }
+    p {
+      line-height: 1.5rem;
+      margin: 0.5rem 0;
+    }
+    blockquote {
+      background-color: var(--sub-bg-color);
+      margin: 0;
+      padding: 1rem;
+    }
+    blockquote > p {
+      margin: 0;
+    }
+    header {
+      margin: 0 auto;
+      max-width: 900px;
+      height: 5rem;
+      display: flex;
+      align-items: center;
+    }
+    .head_link {
+      font-size: 2rem;
+      margin: 0 .5rem;
+      text-decoration: none;
+      margin: 0 auto;
+      color: var(--main-title-color);
+    }
+    .markdown_content p {
+      margin: 0.5rem 0;
+    }
+    .markdown_content code {
+      font-family: monospace;
+      background-color: var(--code-bg-color);
+      border-radius: 3px;
+      font-size: 85%;
+      padding: 0 0.2rem;
+    }
+    .link_card_wrapper {
+      border: 1px solid;
+      border-radius: 3px;
+      display: flex;
+      height: 7rem;
+      color: var(--sub-text-color);
+      cursor: pointer;
+    }
+    .link_card_contents_wrapper {
+      padding: .5rem;
+      flex: 1;
+    }
+    .link_card_title {
+      height: 32px;
+      overflow: hidden;
+      width: 100%;
+      margin-bottom: .5rem;
+      line-height: 15px;
+    }
+    .link_card_title > span {
+      overflow: hidden;
+    }
+    .link_card_description {
+      height: 45px;
+      overflow: hidden;
+      width: 100%;
+      line-height: 15px;
+      color: var(--sub-text-color);
+      opacity: 0.7;
+    }
+    .link_card_description > span {
+      overflow: hidden;
+      font-size: 15px;
+    }
+    .link_card_image {
+      height: 7rem;
+      display: block;
+      margin-left: auto;
+    }
+    .link_card_link_text {
+      font-size: 12px;
+      opacity: 0.5;
+    }
+    @media (max-width: 600px) {
+      .link_card_contents_wrapper {
+        padding: 0.3rem;
+      }
+      .link_card_description {
+        height: 44px;
+        line-height: 15px;
+      }
+      .link_card_title {
+        height: 91px;
+        margin: 0;
+      }
+      .link_card_description {
+        display: none;
+      }
+      .link_card_link_text {
+        display: none;
+      }
+    }
+  </style>
+  <title>{{title}}</title>
+</head>
+<body>
+  <header>
+    <a href="/" class="head_link">感情学特論</a>
+  </header>
+  <section>
+    <div>
+      <h1>{{title}}</h1>
+      <p>書いた日: {{date}}</p>
+    </div>
+    <div class="markdown_content">
+      {{content}}
+    </div>
+  </section>
+</body>
+</html>
